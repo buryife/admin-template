@@ -1,0 +1,178 @@
+/*覆盖 element-ui样式*/
+#app {
+  /*el-button*/
+  .el-button--primary{
+    background-color:#5a8dff;
+    border-color: #5a8dff;
+  }
+  .el-button--primary.is-plain {
+    color: #5a8dff;
+    background: #ecf5ff;
+    border-color: #5a8dff;
+  }
+  .el-button--primary.is-disabled, .el-button--primary.is-disabled:active, .el-button--primary.is-disabled:focus, .el-button--primary.is-disabled:hover{
+    color: #fff;
+    background-color: #a0cfff;
+    border-color: #a0cfff;
+  }
+  /*el-main*/
+  .el-main {
+    padding: 10px;
+    .header, header {
+      padding: 0 0 10px 0;
+    }
+    > div:nth-child(2) {
+      min-height: 775px;
+      padding: 17px 15px;
+      background-color: #fff;
+      box-shadow: 2px 2px 5px #edf3ff;
+    }
+  }
+  /*Table*/
+  .el-table {
+    border: 1px solid #C1C4C9;
+    &__header {
+      height: 36px;
+      .table-header, .has-gutter {
+        height: 36px;
+        font-size: 13px;
+        color: #333;
+        th {
+          height: 36px;
+          padding: 0;
+          background-image: linear-gradient(0deg, #f3f3f3 0%, #ffffff 100%);
+          //border: solid 1px #e9e9e9;
+          .cell {
+            font-weight: bold;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            .caret-wrapper {
+              position: absolute;
+              top: -4px;
+            }
+          }
+        }
+      }
+    }
+    &__body {
+      .el-table__row {
+        height: 36px;
+        td {
+          padding: 0;
+          font-size: 13px;
+          color: #666;
+          .cell {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+    &__empty-block {
+      min-height: 200px;
+    }
+  }
+  /*Table border*/
+  .el-table--border td,
+  .el-table--border th,
+  .el-table__body-wrapper .el-table--border.is-scrolling-left ~ .el-table__fixed {
+    border-right: 1px solid #C1C4C9;
+    border-top: 1px solid #C1C4C9;
+  }
+  /*select border*/
+  .el-input__inner, .el-textarea__inner {
+    border: 1px solid #C1C4C9;
+  }
+  /*Dialog*/
+  .el-dialog {
+    border-radius: 5px;
+    min-width: 716px;
+    &__header {
+      box-sizing: border-box;
+      padding: 15px 20px;
+      height: 50px;
+      background-color: #1aa86b;
+      -webkit-box-shadow: 0px 2px 14px 0px rgba(0, 0, 0, 0.08);
+      box-shadow: 0px 2px 14px 0px rgba(0, 0, 0, 0.08);
+      border-bottom: 0;
+      .el-dialog__title {
+        font-size: 16px;
+        color: #fff;
+        line-height: 1;
+      }
+      .el-dialog__headerbtn {
+        top: 12px;
+      }
+    }
+    &__body {
+      padding: 20px;
+    }
+    &__footer {
+      padding: 0 20px 15px;
+      .el-button + .el-button {
+        margin-left: 5px;
+      }
+    }
+  }
+  .el-dialog__headerbtn .el-dialog__close{
+    color: #fff;}
+  /*表格复选框*/
+  .el-table__body .el-table__row,
+  .el-table__header,
+  .el-table__header .has-gutter,
+  .el-table__header .has-gutter th{
+    height: 46px;
+  }
+  .el-checkbox__inner,
+  .el-checkbox__input.is-checked,
+  .el-checkbox__input.is-indeterminate{
+    background-color: #fff;
+    border-color: #ccc;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+  }
+  .el-checkbox__inner::after{
+    border: 1px solid #1aa86b;
+    border-left: 0;
+    border-top: 0;
+    height: 8px;
+    left: 7px;
+    top: 3px;
+  }
+  /*表格复选框结束*/
+  /*Form*/
+  .el-form {
+    &-item {
+      margin-bottom: 0;
+    }
+  }
+  //注册页下拉框
+  .select-box .el-input__inner {
+    padding-left: 30px;
+  }
+  //分页样式
+  .el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev {
+    padding: 0 10px;
+  }
+  /*分页器*/
+  .el-pagination.is-background .el-pager li:not(.disabled).active{
+    background-color: #1aa86b;
+  }
+
+}
+/*MessageBox*/
+.el-message-box__wrapper{
+  .el-message-box {
+    width: 250px;
+    &.w-310{
+      width: 310px;
+    }
+  }
+}
+
+/*#app .el-table__body .el-table__row .coding-column .cell{
+  overflow: visible;
+}*/

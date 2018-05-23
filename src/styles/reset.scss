@@ -1,0 +1,37 @@
+/* css reset */
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu {margin:0;padding:0;}
+header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details {display:block;}
+table {border-collapse:collapse;border-spacing:0;}
+caption,th {text-align:left;}
+html,body,fieldset,img,iframe,abbr {border:0;}
+i,cite,em,var,address,dfn {font-style:normal;}
+li {list-style:none;}
+textarea {overflow:auto;resize:none;}
+label,summary {cursor:default;}
+a,button {cursor:pointer;}
+h1,h2,h3,h4,h5,h6,em,strong,b {font-weight:bold;}
+del,ins,u,s,a,a:hover {text-decoration:none;}
+body {background:#fff;}
+/* function */
+.f-ib {display:inline-block;*display:inline;*zoom:1;}
+.f-dn {display:none;}
+.f-bn {border:none;}
+.f-db {display:block;}
+.f-fl {float:left;}
+.f-fr {float:right;}
+.f-pr {position:relative;}
+.f-prz {position:relative;zoom:1;}
+.f-oh {overflow:hidden;}
+/*字体*/
+.f-fwn {font-weight:normal;}
+.f-fwb {font-weight:bold;}
+.f-tal {text-align:left;}
+.f-tac {text-align:center;}
+.f-tar {text-align:right;}
+/*光标*/
+.f-csp {cursor:pointer;}
+.f-csd {cursor:default;}
+.f-csh {cursor:help;}
+.f-csm {cursor:move;}
+.clearfix:after {display:block;clear:both;visibility:hidden;height:0;overflow:hidden;content:"";}
+
