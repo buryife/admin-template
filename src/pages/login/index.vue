@@ -57,44 +57,23 @@
       handleLogin() {
         this.$refs.loginForm.validate(valid => {
           if (valid) {
-            this.$ajaxPost('/member/login', this.loginForm).then(({data}) => {
+            this.$ajaxPost('/login', this.loginForm).then(({data}) => {
               if (data.code == 1) {
                 this.$message.success('登陆成功');
-                this.$refs.loginForm.resetFields();
+//                this.$refs.loginForm.resetFields();
                 //存储获取的token到cookie
-                this.$store.dispatch('LoginByUsername', data)
+                /*this.$store.dispatch('LoginByUsername', data)
                 // 返回的数据存在cookie里面
                 Object.keys(data.data).forEach(e => {
                   this.$Cookies.set(e, data.data[e]);
                 });
-                this.getNavMenu()
+                this.getNavMenu()*/
               } else {
                 this.$message.error(data.msg)
               }
             })
           }
         });
-      },
-      // 登录获取验证码
-      getCode() {
-        this.$refs.loginForm.validateField('phone', (val) => {
-          // 当val==''时表示校验通过
-          if (val == '') {
-            clearInterval(this.login.timer);
-            this.login.timer = setInterval(() => {
-              if (this.login.count == 0) {
-                clearInterval(this.login.timer);
-                this.login.loginCodeTxt = '获取验证码';
-                this.login.canGetCode = false;
-                this.login.count = 60;
-              } else {
-                this.login.count--;
-                this.login.loginCodeTxt = '再次获取 ' + this.login.count + ' s';
-                this.login.canGetCode = true;
-              }
-            }, 1000);
-          }
-        })
       },
       getNavMenu(role_id) {   //请求菜单
         this.$ajaxGet("member/get_power", {mid: this.$Cookies.get('id')}).then(({data}) => {
