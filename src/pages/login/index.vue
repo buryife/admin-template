@@ -59,15 +59,16 @@
           if (valid) {
             this.$ajaxPost('/login', this.loginForm).then(({data}) => {
               if (data.code == 1) {
+                console.log(data);
                 this.$message.success('登陆成功');
 //                this.$refs.loginForm.resetFields();
                 //存储获取的token到cookie
-                /*this.$store.dispatch('LoginByUsername', data)
+                this.$store.dispatch('LoginByUsername', data)
                 // 返回的数据存在cookie里面
                 Object.keys(data.data).forEach(e => {
                   this.$Cookies.set(e, data.data[e]);
                 });
-                this.getNavMenu()*/
+                this.getNavMenu()
               } else {
                 this.$message.error(data.msg)
               }
@@ -76,14 +77,10 @@
         });
       },
       getNavMenu(role_id) {   //请求菜单
-        this.$ajaxGet("member/get_power", {mid: this.$Cookies.get('id')}).then(({data}) => {
-          if (data.code === 1) {
-            //存储导航栏
-            sessionStorage.setItem('menu_list', JSON.stringify(data.data.result));
+        this.$ajaxPost("/getnav", {mid: this.$Cookies.get('id')}).then(({data}) => {
+          //存储导航栏
+            sessionStorage.setItem('menu_list', JSON.stringify(data.data));
             this.$router.push({path: '/home'})
-          } else {
-            this.$message.error(data.msg);
-          }
         });
       },
     },

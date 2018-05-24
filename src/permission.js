@@ -14,7 +14,7 @@ router.beforeEach((to, from, next) => {
       next('/home');
       NProgress.done();
     } else {
-      store.dispatch('updatePageButton', to.name).then(() => { // 根据roles权限生成可访问的路由表
+      store.dispatch('updatePageButton', to.name).then(() => {
         next();
       })
       next();
