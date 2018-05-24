@@ -11,11 +11,11 @@ import Util from "@/assets/js/util.js";
 Vue.prototype.$Util = Util;
 Vue.prototype.$baseUrl = process.env.BASE_API;
 Vue.prototype.$Cookies = Cookies;
+
 Vue.prototype.$ajaxExport = function (url,params,cb) {
   let get_url = Util.getUrlPara(url, params,this);
   let xhr = new XMLHttpRequest();
   xhr.open('GET', get_url, true);
-  console.log(Cookies.get('token'));
   xhr.setRequestHeader("Authorization", Cookies.get('token'));
   xhr.responseType = "blob";
   xhr.onload = function () {
@@ -23,8 +23,6 @@ Vue.prototype.$ajaxExport = function (url,params,cb) {
       var blob = this.response;
       var reader = new FileReader();
       reader.readAsDataURL(blob);
-      console.log(blob);
-      console.log(reader);
       reader.onload = function (e) {
         if (cb){
           cb(e)
